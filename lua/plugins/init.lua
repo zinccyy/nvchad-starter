@@ -17,12 +17,15 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        -- defaults 
+        -- defaults
         "vim",
         "lua",
         "vimdoc",
 
-       -- low level
+        -- high level
+        "c_sharp",
+
+        -- low level
         "c",
         "zig",
         "cpp",
@@ -40,13 +43,14 @@ return {
   },
 
   {
-   "williamboman/mason.nvim",
-   opts = {
+    "williamboman/mason.nvim",
+    opts = {
       ensure_installed = {
         "lua-language-server",
         "stylua",
         "clangd",
         "pyright",
+        "csharp-language-server",
       },
     },
   },
@@ -66,6 +70,7 @@ return {
           c = formatters.lsp,
           cpp = formatters.lsp,
           lua = formatters.lsp,
+          cs = formatters.lsp,
         },
         auto_commands = true,
         user_commands = true,
