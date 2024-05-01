@@ -7,33 +7,6 @@ return {
   },
 
   {
-    "lervag/vimtex",
-    init = function()
-      vim.g.vimtex_view_method = "zathura"
-    end,
-    lazy = false
-  },
-
-  {
-    "christoomey/vim-tmux-navigator",
-    cmd = {
-      "TmuxNavigateLeft",
-      "TmuxNavigateDown",
-      "TmuxNavigateUp",
-      "TmuxNavigateRight",
-      "TmuxNavigatePrevious",
-    },
-    keys = {
-      { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
-      { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
-      { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
-      { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
-      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-    },
-    lazy = false,
-  },
-
-  {
     "nvim-tree/nvim-tree.lua",
     opts = {
       git = { enable = true },
@@ -44,6 +17,12 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        --web
+        "typescript",
+        "javascript",
+        "css",
+        "html",
+
         -- defaults
         "vim",
         "lua",
@@ -78,6 +57,8 @@ return {
         "clangd",
         "pyright",
         "csharp-language-server",
+        "typescript-langauge-server",
+        "tailwindcss-language-server",
       },
     },
   },
@@ -98,6 +79,8 @@ return {
           cpp = formatters.lsp,
           lua = formatters.lsp,
           cs = formatters.lsp,
+          typescript = formatters.lsp,
+          typescriptreact = formatters.lsp,
         },
         auto_commands = true,
         user_commands = true,

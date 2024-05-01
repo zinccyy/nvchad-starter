@@ -14,3 +14,10 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+lspconfig.tsserver.setup {
+  on_init = on_init,
+  on_attach = on_attach,
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  capabilities = capabilities,
+}
